@@ -15,9 +15,12 @@ export default async function ListPage() {
   })
 
   const total = reservations.length
-  const confirmed = reservations.filter(r => r.status === 'confirmed').length
-  const pending = reservations.filter(r => r.status === 'pending').length
-
+  const confirmed = reservations.filter(
+    (r: { status: string }) => r.status === 'confirmed'
+  ).length
+  const pending = reservations.filter(
+    (r: { status: string }) => r.status === 'pending'
+  ).length
   return (
     // 나머지 코드 그대로
     <div className="min-h-screen bg-[#0a0a0a]">
